@@ -1,0 +1,34 @@
+.intro-block {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+
+  @media (max-width: 976px) {
+    flex-direction: column;
+  }
+
+  &__img-responsive {
+    border-radius: 2px 220px 2px 2px;
+    width: 541px;
+    height: 580px;
+
+    @media (max-width: 576px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text-container {
+    margin: 2rem 0 2rem 0;
+    @media (max-width: 1370px) {
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

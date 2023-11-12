@@ -1,0 +1,27 @@
+.slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+
+.slider__image-container {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.slider__image {
+  width: 100%;
+}
+
+.slider__counter {
+  margin: 0;
+}
