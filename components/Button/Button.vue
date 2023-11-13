@@ -1,13 +1,13 @@
 <script setup lang="ts">
 interface IButton {
-  type?: string;
+  type?: "button" | "submit" | "reset";
   color?: string;
-  square?: bolean;
+  square?: boolean;
   onClick?: () => void;
 }
 
-const props = defineProps<IButton>();
-const emit = defineEmits();
+const { color, square, type } = defineProps<IButton>();
+const emit = defineEmits(["onClick"]);
 </script>
 <template>
   <button
@@ -16,7 +16,6 @@ const emit = defineEmits();
       __blue: color === 'blue',
       __square: square,
     }"
-    :style="class"
     :type="type"
     @click="emit('onClick')"
   >

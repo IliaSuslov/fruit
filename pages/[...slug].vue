@@ -1,12 +1,12 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import VIntroBlock from "../components/Article/Intro/VIntroBlock";
-import VTextBlock from "../components/Article/Text/VTextBlock";
-import VImageBlock from "../components/Article/Image/VImageBlock";
-import VSliderBlock from "../components/Article/Slider/VSliderBlock";
-import VSubscribeFormBlock from "../components/Article/SubscribeForm/VSubscribeFormBlock";
-import VListBlock from "../components/Article/List/VListBlock";
-import VCTAFormBlock from "../components/Article/Form/VCTAFormBlock";
+import { onMounted } from "vue";
+import VIntroBlock from "/components/Article/Intro/VIntroBlock";
+import VTextBlock from "/components/Article/Text/VTextBlock";
+import VImageBlock from "/components/Article/Image/VImageBlock.vue";
+import VSliderBlock from "/components/Article/Slider/VSliderBlock";
+import VSubscribeFormBlock from "/components/Article/SubscribeForm/VSubscribeFormBlock";
+import VListBlock from "/components/Article/List/VListBlock";
+import VCTAFormBlock from "/components/Article/Form/VCTAFormBlock";
 
 const route = useRoute();
 const store = useStore();
