@@ -5,10 +5,16 @@ interface IInput {
 }
 
 const { type, placeholder } = defineProps<IInput>();
+const model = defineModel();
 </script>
 
 <template>
-  <input :placeholder="placeholder" :type="type" class="input" />
+  <input
+    :placeholder="placeholder"
+    :type="type"
+    class="input"
+    v-model="model"
+  />
 </template>
 
 <style scoped lang="scss">

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, reactive, watch } from "vue";
 import VIntroBlock from "/components/Article/Intro/VIntroBlock";
 import VTextBlock from "/components/Article/Text/VTextBlock";
 import VImageBlock from "/components/Article/Image/VImageBlock.vue";
@@ -12,20 +12,28 @@ const route = useRoute();
 const store = useStore();
 const { data, loading, error, pageType } = storeToRefs(store);
 
-onMounted(async () => {
-  await store.getTemplate(route.fullPath);
-});
+// onMounted(async () => {
+//   await store.getTemplate(route.fullPath);
+// });
 
-watchEffect(() => {
-  useSeoMeta({
-    title: data?.value?.meta?.title,
-    description: data?.value?.meta?.description,
-  });
-});
+// watchEffect(() => {
+//   useSeoMeta({
+//     title: data?.value?.meta?.title,
+//     description: data?.value?.meta?.description,
+//   });
+// });
+
+const form = reactive({ name: "", email: "", password: "" });
 </script>
 
 <template>
-  <div v-if="loading && !data?.body"><Loader /></div>
+  <input v-model="form.name" />
+  <!-- <Input placeholder="name" v-model="form.name" />
+  <Input placeholder="email" v-model="form.email" />
+  <Input placeholder="password" v-model="form.password" type="password" /> -->
+
+  {{ form }}
+  <!-- <div v-if="loading && !data?.body"><Loader /></div>
   <div v-if="error"><Error /></div>
   <div v-else class="page-container">
     <div v-for="(pageBlock, i) in data?.body" :key="i">
@@ -50,7 +58,7 @@ watchEffect(() => {
       />
       <VCTAFormBlock v-if="pageBlock.type === 'cta_form_block'" />
     </div>
-  </div>
+  </div> -->
 </template>
 <style scoped lang="scss">
 .page-container {
