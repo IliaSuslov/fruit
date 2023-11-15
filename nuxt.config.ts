@@ -1,7 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 //@ts-nocheck
-import { resolve } from 'path'
-
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/main.scss'],
